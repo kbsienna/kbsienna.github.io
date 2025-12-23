@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K. B. Sienna</title>
 
-  <!-- Minimal, sensual, modern-dark aesthetic -->
   <style>
     :root {
-      --bg: #f6efe9;           /* soft warm paper */
-      --panel: #ffffff;
-      --text: #1f140f;         /* deep brown */
-      --muted: #6b4a3a;
-      --accent: #c97a8a;       /* muted sensual pink */
-      --line: rgba(0,0,0,0.08);
+      --bg: #f3ece6;
+      --card: #ffffff;
+      --sienna: #7a3b2e;
+      --sienna-dark: #5a2a21;
+      --pink: #c98aa2;
+      --text: #2b1e1a;
     }
 
     * {
@@ -22,157 +21,190 @@
 
     body {
       margin: 0;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      background: radial-gradient(1200px 600px at 50% -10%, #ffffff 0%, var(--bg) 60%);
+      font-family: Georgia, serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    /* ---------- Layout ---------- */
-    .wrap {
-      max-width: 880px;
+    .container {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 5rem 1.5rem 4rem;
+      padding: 3rem 1.5rem;
     }
 
-    section {
+    header {
+      text-align: center;
       margin-bottom: 4rem;
     }
 
-    /* ---------- Header ---------- */
-    header {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-
     header h1 {
-      font-size: 3.2rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.75rem;
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sienna-dark);
     }
 
     header p {
-      font-style: italic;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.05rem;
     }
 
-    /* ---------- Section titles ---------- */
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      position: relative;
+    /* BOOK LIST (STACKED VERTICALLY) */
+    .books {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
     }
 
-    h2::after {
-      content: "";
-      display: block;
-      width: 42px;
-      height: 2px;
-      background: var(--accent);
-      margin-top: 0.6rem;
-    }
-
-    /* ---------- Text ---------- */
-    p {
-      max-width: 620px;
-      margin: 0.5rem 0;
-    }
-
-    /* ---------- Book card ---------- */
     .book {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
+      background: var(--card);
       padding: 2rem;
-      max-width: 680px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.06);
-    }
-
-    .book strong {
-      font-size: 1.3rem;
-      letter-spacing: 0.04em;
-    }
-
-    .book p {
-      color: var(--muted);
-    }
-
-    .book img {
-      margin-top: 1.5rem;
-      max-width: 220px;
       border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* ---------- Links ---------- */
-    a {
-      color: var(--accent);
+    .book:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    }
+
+    /* COVER + INFO SIDE BY SIDE */
+    .book-layout {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .cover {
+      width: 160px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+
+    .book-info {
+      flex: 1;
+    }
+
+    .book h2 {
+      margin-top: 0;
+      color: var(--sienna-dark);
+    }
+
+    .price {
+      font-style: italic;
+      margin: 0.5rem 0 1.2rem;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      background: var(--sienna);
+      color: #fff;
       text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .buy-button:hover {
+      background: var(--pink);
+      box-shadow: 0 0 0 6px rgba(201,138,162,0.15);
     }
 
-    /* ---------- Footer ---------- */
     footer {
+      margin-top: 5rem;
       text-align: center;
-      margin-top: 6rem;
       font-size: 0.85rem;
-      color: var(--muted);
+      opacity: 0.7;
     }
 
-    /* ---------- Small screens ---------- */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.4rem;
+    /* MOBILE */
+    @media (max-width: 700px) {
+      .book-layout {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cover {
+        width: 180px;
       }
     }
   </style>
 </head>
-<body>
 
-  <div class="wrap">
+<body>
+  <div class="container">
 
     <header>
       <h1>K. B. Sienna</h1>
-      <p>Dark romance & dystopian fiction</p>
+      <p>
+        Dark romance and speculative fiction.
+        Stories about intimacy, survival, and the thin line between desire and ruin.
+      </p>
     </header>
 
-    <section>
-      <h2>About</h2>
-      <p>
-        K. B. Sienna writes intimate, dangerous stories set in fractured worlds.
-        Desire, survival, and control intertwine where love is never safe.
-      </p>
-    </section>
+    <section class="books">
 
-    <section>
-      <h2>Books</h2>
       <div class="book">
-        <strong>Hear Me</strong>
-        <p>Post‑apocalyptic dark romance.</p>
-        <!-- Uncomment when your cover is uploaded -->
-        <!-- <img src="hear-me-cover.jpg" alt="Hear Me book cover"> -->
+        <div class="book-layout">
+          <img src="hear-me-cover.jpg" alt="Hear Me book cover" class="cover" />
+          <div class="book-info">
+            <h2>Hear Me</h2>
+            <p class="price">Ebook · PDF + EPUB · €2,99</p>
+            <p>
+              A post-apocalyptic dark romance where survival demands obedience,
+              and intimacy becomes a dangerous form of power.
+            </p>
+            <a
+              href="PASTE_HEAR_ME_CHECKOUT_LINK_HERE"
+              class="buy-button"
+              data-lemon-overlay="true"
+            >
+              Get the Ebook
+            </a>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <div class="book">
+        <div class="book-layout">
+          <img src="ailouran-cover.jpg" alt="The Ailouran from Earth book cover" class="cover" />
+          <div class="book-info">
+            <h2>The Ailouran from Earth</h2>
+            <p class="price">Ebook · PDF + EPUB · €5,99</p>
+            <p>
+              A stranger arrives from another world, carrying desire, violence,
+              and a truth about humanity that was never meant to surface.
+            </p>
+            <a
+              href="PASTE_AILOURAN_CHECKOUT_LINK_HERE"
+              class="buy-button"
+              data-lemon-overlay="true"
+            >
+              Get the Ebook
+            </a>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <footer>
-      © 2025 K. B. Sienna
+      © K. B. Sienna
     </footer>
-
   </div>
 
+  <!-- Lemon Squeezy overlay -->
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </body>
 </html>
