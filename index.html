@@ -7,6 +7,7 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Updock&display=swap');
+
     :root {
       --bg: #f3ece6;
       --card: #ffffff;
@@ -41,8 +42,6 @@
       border-bottom: 1px solid rgba(122,59,46,0.15);
     }
 
-    
-
     header h1 {
       margin: 0;
       font-size: 4.8rem;
@@ -66,7 +65,6 @@
       font-size: 1.05rem;
     }
 
-    /* BOOK LIST (STACKED VERTICALLY) */
     .books {
       display: flex;
       flex-direction: column;
@@ -86,7 +84,6 @@
       box-shadow: 0 30px 60px rgba(0,0,0,0.12);
     }
 
-    /* COVER + INFO SIDE BY SIDE */
     .book-layout {
       display: flex;
       gap: 2rem;
@@ -133,6 +130,12 @@
       box-shadow: 0 0 0 6px rgba(201,138,162,0.15);
     }
 
+    .trust {
+      font-size: 0.8rem;
+      opacity: 0.65;
+      margin-top: 0.4rem;
+    }
+
     footer {
       margin-top: 5rem;
       text-align: center;
@@ -140,7 +143,6 @@
       opacity: 0.7;
     }
 
-    /* MOBILE */
     @media (max-width: 700px) {
       .book-layout {
         flex-direction: column;
@@ -158,7 +160,6 @@
   <div class="container">
 
     <header>
-      
       <h1>K. B. Sienna</h1>
       <p>
         Dark romance and speculative fiction.
@@ -175,15 +176,15 @@
             <h2>Hear Me</h2>
             <p class="price">Ebook · PDF + EPUB · €2,99</p>
             <p>
-          <em>Hear Me</em> is a psychologically dark erotic novel that begins in a post-apocalyptic world. Rhea survives by staying unseen and unheard, moving carefully through its ruins, where survival depends on caution and usefulness. When Kane breaks that fragile balance, her world is flipped upside down.
-        </p>
-        <p>
-          Taken from what remains of her life, Rhea is forced into a new reality where autonomy is stripped away and survival demands submission, adaptation, and restraint. When an opportunity finally emerges, she is faced with a grim choice to make a sacrifice in order to protect what truly matters.
-        </p>
-        <p style="font-size: 0.9rem; opacity: 0.85;">
-          <strong>Disclaimer:</strong><br />
-          This book contains explicit non-consensual sexual content and is intended for readers 18+ only. It is a work of fiction and does not reflect or endorse real-life sexual behavior, which should always involve enthusiastic consent.
-        </p>
+              <em>Hear Me</em> is a psychologically dark erotic novel that begins in a post-apocalyptic world. Rhea survives by staying unseen and unheard, moving carefully through its ruins, where survival depends on caution and usefulness. When Kane breaks that fragile balance, her world is flipped upside down.
+            </p>
+            <p>
+              Taken from what remains of her life, Rhea is forced into a new reality where autonomy is stripped away and survival demands submission, adaptation, and restraint. When an opportunity finally emerges, she is faced with a grim choice to make a sacrifice in order to protect what truly matters.
+            </p>
+            <p style="font-size: 0.9rem; opacity: 0.85;">
+              <strong>Disclaimer:</strong><br />
+              This book contains explicit non-consensual sexual content and is intended for readers 18+ only. It is a work of fiction and does not reflect or endorse real-life sexual behavior, which should always involve enthusiastic consent.
+            </p>
             <a
               href="PASTE_HEAR_ME_CHECKOUT_LINK_HERE"
               class="buy-button"
@@ -191,6 +192,7 @@
             >
               Get the Ebook
             </a>
+            <p class="trust">Instant download · Secure checkout</p>
           </div>
         </div>
       </div>
@@ -212,6 +214,7 @@
             >
               Get the Ebook
             </a>
+            <p class="trust">Instant download · Secure checkout</p>
           </div>
         </div>
       </div>
@@ -223,7 +226,6 @@
     </footer>
   </div>
 
-  <!-- Lemon Squeezy overlay -->
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </body>
 </html>
