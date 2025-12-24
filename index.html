@@ -17,9 +17,7 @@
       --text: #2b1e1a;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -76,36 +74,33 @@
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .book:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
     }
 
     .book-layout {
       display: flex;
       gap: 2rem;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .cover {
-      width: 160px;
-      height: auto;
+      width: 180px;
+      height: 270px;
       border-radius: 8px;
+      background: linear-gradient(135deg, #7a3b2e, #c98aa2);
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       flex-shrink: 0;
+      margin-top: 0.3rem;
     }
 
-    .book-info {
-      flex: 1;
-    }
+    .book-info { flex: 1; }
 
     .book h2 {
       margin-top: 0;
       color: var(--sienna-dark);
+      display: inline-block;
     }
+
+    
 
     .price {
       font-style: italic;
@@ -128,18 +123,6 @@
       text-decoration: none;
       font-size: 0.95rem;
       letter-spacing: 0.05em;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .buy-button:hover {
-      background: var(--pink);
-      box-shadow: 0 0 0 6px rgba(201,138,162,0.15);
-    }
-
-    .trust {
-      font-size: 0.8rem;
-      opacity: 0.65;
-      margin-top: 0.4rem;
     }
 
     footer {
@@ -150,98 +133,47 @@
     }
 
     @media (max-width: 700px) {
-      .book-layout {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .cover {
-        width: 180px;
-      }
+      .book-layout { flex-direction: column; text-align: center; }
+      .cover { width: 180px; height: 270px; }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-
     <header>
       <h1>K. B. Sienna</h1>
-      <p>
-        Dark romance and speculative fiction.
-        Stories about intimacy, survival, and the thin line between desire and ruin.
-      </p>
+      <p>Dark romance and speculative fiction. Stories about intimacy, survival, and the thin line between desire and ruin.</p>
     </header>
 
     <section class="books">
-
-      <!-- Hear Me -->
       <div class="book">
         <div class="book-layout">
-          <img src="hear-me-cover.png" alt="Hear Me book cover" class="cover" />
+          <div class="cover"></div>
           <div class="book-info">
             <h2>Hear Me</h2>
             <p class="price">Ebook · PDF + EPUB · €3,99</p>
             <p class="meta">Novella · ~21,500 words · ~3–4 hour read</p>
-
-            <p>
-              <em>Hear Me</em> is a psychologically dark erotic novel that begins in a post-apocalyptic world. Rhea survives by staying unseen and unheard, moving carefully through its ruins, where survival depends on caution and usefulness. When Kane breaks that fragile balance, her world is flipped upside down.
-            </p>
-
-            <p>
-              Taken from what remains of her life, Rhea is forced into a new reality where autonomy is stripped away and survival demands submission, adaptation, and restraint. When an opportunity finally emerges, she is faced with a grim choice to make a sacrifice in order to protect what truly matters.
-            </p>
-
-            <p style="font-size: 0.9rem; opacity: 0.85;">
-              <strong>Disclaimer:</strong><br />
-              This book contains explicit non-consensual sexual content and is intended for readers 18+ only. It is a work of fiction and does not reflect or endorse real-life sexual behavior, which should always involve enthusiastic consent.
-            </p>
-
-            <a
-              href="PASTE_HEAR_ME_CHECKOUT_LINK_HERE"
-              class="buy-button"
-              data-lemon-overlay="true"
-            >
-              Get the Ebook
-            </a>
-            <p class="trust">Instant download · Secure checkout</p>
+            <p><em>Hear Me</em> is a psychologically dark erotic novel set in a post-apocalyptic world where survival depends on silence and restraint.</p>
+            <a class="buy-button">Get the Ebook</a>
           </div>
         </div>
       </div>
 
-      <!-- The Ailouran from Earth -->
       <div class="book">
         <div class="book-layout">
-          <img src="ailouran-cover.png" alt="The Ailouran from Earth book cover" class="cover" />
+          <div class="cover"></div>
           <div class="book-info">
             <h2>The Ailouran from Earth</h2>
             <p class="price">Ebook · PDF + EPUB · €9,99</p>
             <p class="meta">Full-length novel · ~87,000 words · ~12–13 hour read</p>
-
-            <p>
-              Text here.
-            </p>
-
-            <a
-              href="PASTE_AILOURAN_CHECKOUT_LINK_HERE"
-              class="buy-button"
-              data-lemon-overlay="true"
-            >
-              Get the Ebook
-            </a>
-            <p class="trust">Instant download · Secure checkout</p>
+            <p>A stranger arrives from another world, carrying desire, violence, and a truth about humanity.</p>
+            <a class="buy-button">Get the Ebook</a>
           </div>
         </div>
       </div>
-
     </section>
 
-    <footer>
-      © K. B. Sienna
-    </footer>
-
+    <footer>© K. B. Sienna</footer>
   </div>
-
-  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </body>
 </html>
