@@ -9,12 +9,12 @@
     @import url('https://fonts.googleapis.com/css2?family=Updock&display=swap');
 
     :root {
-      --bg: #6b2f26;        /* deep sienna background */
-      --bg-dark: #4a1f18;  /* darker edge for depth */
-      --card: #f6efe9;     /* warm skin-toned card */
-      --sienna: #8c3b2f;   /* richer sienna */
+      --bg: #6b2f26;
+      --bg-dark: #4a1f18;
+      --card: #f6efe9;
+      --sienna: #8c3b2f;
       --sienna-dark: #5a231c;
-      --pink: #d08aa8;     /* sensual accent only */
+      --pink: #d08aa8;
       --text: #2a1612;
     }
 
@@ -131,6 +131,8 @@
       font-size: 0.95rem;
       letter-spacing: 0.05em;
       transition: background 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .buy-button:hover {
@@ -148,7 +150,7 @@
       font-size: 0.72rem;
       opacity: 0.75;
       margin-top: 1.2rem;
-      border-left: 3px solid rgba(122,59,46,0.25); /* 122,59,46,0.25 */
+      border-left: 3px solid rgba(122,59,46,0.25);
       padding-left: 0.8rem;
     }
 
@@ -195,7 +197,11 @@
 
             <p class="disclaimer"><strong>Disclaimer:</strong><br />This book contains explicit non-consensual sexual content and is intended for readers 18+ only. It is a work of fiction and does not reflect or endorse real-life sexual behavior, which should always involve enthusiastic consent.</p>
 
-            <a href="PASTE_HEAR_ME_CHECKOUT_LINK_HERE" class="buy-button" data-lemon-overlay="true">Get the Ebook</a>
+            <button
+              class="buy-button lemonsqueezy-button"
+              data-product="HEAR_ME_PRODUCT_ID">
+              Get the Ebook
+            </button>
             <p class="trust">Instant download · Secure checkout</p>
           </div>
         </div>
@@ -209,7 +215,12 @@
             <p class="price">Ebook · PDF + EPUB · €9,99</p>
             <p class="meta">Full-length novel · ~87,000 words · ~12–13 hour read</p>
             <p>Text here.</p>
-            <a href="PASTE_AILOURAN_CHECKOUT_LINK_HERE" class="buy-button" data-lemon-overlay="true">Get the Ebook</a>
+
+            <button
+              class="buy-button lemonsqueezy-button"
+              data-product="AILOURAN_PRODUCT_ID">
+              Get the Ebook
+            </button>
             <p class="trust">Instant download · Secure checkout</p>
           </div>
         </div>
