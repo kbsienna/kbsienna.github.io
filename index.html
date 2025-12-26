@@ -204,12 +204,14 @@
             <p>Taken from what remains of her life, she is brought into a pristine, controlled reality where power is absolute and survival demands submission, adaptation, and restraint. Claimed by a man whose care is inseparable from cruelty, she must endure an existence where her body tastes pleasure even as her mind resists, and obedience becomes the price of survival.</p>
 
             <p class="disclaimer"><strong>Disclaimer:</strong><br />Contains explicit non-consensual sexual content. 18+ only.</p>
-
+            
             <a
               href="https://kbsienna.gumroad.com/l/cokqwu?wanted=true"
-              class="buy-button">
+              class="buy-button"
+              data-book="Hear Me">
               Get the Ebook
             </a>
+
 
             <p class="trust">Instant download · Secure checkout</p>
           </div>
@@ -246,5 +248,22 @@
 
   <!-- Gumroad checkout -->
   <script src="https://gumroad.com/js/gumroad.js"></script>
+
+  <!-- GA4 Gumroad click tracking -->
+  <script>
+document.addEventListener("click", function (event) {
+  const link = event.target.closest("a");
+  if (!link || !link.href) return;
+
+  if (link.href.includes("gumroad.com")) {
+    gtag("event", "gumroad_click", {
+      book: link.dataset.book || "unknown",
+      destination: link.href,
+      transport_type: "beacon"
+    });
+  }
+});
+</script>
+
 </body>
 </html>
