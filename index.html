@@ -250,20 +250,23 @@
   <script src="https://gumroad.com/js/gumroad.js"></script>
 
   <!-- GA4 Gumroad click tracking -->
-  <script>
-document.addEventListener("click", function (event) {
-  const link = event.target.closest("a");
-  if (!link || !link.href) return;
+ <script>
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a");
+    if (!link || !link.href) return;
+  
+    if (link.href.includes("gumroad.com")) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "gumroad_click", {
+          book: link.dataset.book || "unknown",
+          destination: link.href,
+          transport_type: "beacon"
+        });
+      }
+    }
+  });
+  </script>
 
-  if (link.href.includes("gumroad.com")) {
-    gtag("event", "gumroad_click", {
-      book: link.dataset.book || "unknown",
-      destination: link.href,
-      transport_type: "beacon"
-    });
-  }
-});
-</script>
 
 </body>
 </html>
