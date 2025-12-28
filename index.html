@@ -177,13 +177,7 @@
 
       .cover { width: 180px; }
     }
-
-        /* Hide Cusdis pending / moderation text */
-    .cusdis_thread .status,
-    .cusdis_thread .pending,
-    .cusdis_thread .comment-status {
-      display: none !important;
-    }
+  
 
     .review-pending {
       font-size: 0.75rem;
@@ -257,7 +251,7 @@
             <section class="reviews">
             
               <button class="reviews-toggle" type="button">
-                Reader Reviews (<span class="review-count">0</span>)
+                Reader Reviews
               </button>
             
               <div class="reviews-content" hidden>
@@ -271,9 +265,6 @@
                   data-page-title="Hear Me">
                 </div>
             
-                <p class="review-pending">
-                  Thank you for your review. It will appear shortly.
-                </p>
               </div>
             
             </section>
@@ -318,9 +309,6 @@
                   data-page-title="The Ailouran on Earth">
                 </div>
             
-                <p class="review-pending">
-                  Thank you for your review. It will appear shortly.
-                </p>
               </div>
             
             </section>
@@ -382,7 +370,6 @@
   document.querySelectorAll('.reviews').forEach(section => {
     const toggle = section.querySelector('.reviews-toggle');
     const content = section.querySelector('.reviews-content');
-    const countEl = section.querySelector('.review-count');
   
     toggle.addEventListener('click', () => {
       content.hidden = !content.hidden;
