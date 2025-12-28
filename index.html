@@ -192,6 +192,29 @@
       font-style: italic;
     }
 
+    /* Collapsible Reviews*/
+
+    .reviews-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      margin-top: 2rem;
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--sienna-dark);
+      cursor: pointer;
+      letter-spacing: 0.04em;
+    }
+    
+    .reviews-toggle:hover {
+      text-decoration: underline;
+    }
+    
+    .reviews-content {
+      margin-top: 1.4rem;
+    }
+
+
   </style>
 </head>
 
@@ -232,24 +255,28 @@
 
             <!-- Reviews -->
             <section class="reviews">
-              <h3>Reader Reviews</h3>
             
-              <div
-                id="cusdis_thread"
-                class="cusdis_thread"
-                data-host="https://cusdis.com"
-                data-app-id="da06c15f-9d32-43af-8365-c26c6d0b4ca3"
-                data-page-id="hear-me"
-                data-page-url="https://kbsienna.com"
-                data-page-title="Hear Me">
+              <button class="reviews-toggle" type="button">
+                Reader Reviews (<span class="review-count">0</span>)
+              </button>
+            
+              <div class="reviews-content" hidden>
+                <div
+                  id="cusdis_thread"
+                  class="cusdis_thread"
+                  data-host="https://cusdis.com"
+                  data-app-id="da06c15f-9d32-43af-8365-c26c6d0b4ca3"
+                  data-page-id="hear-me"
+                  data-page-url="https://kbsienna.com"
+                  data-page-title="Hear Me">
+                </div>
+            
+                <p class="review-pending">
+                  Thank you for your review. It will appear shortly.
+                </p>
               </div>
-
             
-              <p class="review-pending">
-                Thank you for your review. It will appear shortly.
-              </p>
             </section>
-
 
 
           </div>
@@ -260,9 +287,9 @@
       <!--
       <div class="book">
         <div class="book-layout">
-          <img src="ailouran-cover.png" alt="The Ailouran from Earth book cover" class="cover" />
+          <img src="ailouran-cover.png" alt="The Ailouran from on book cover" class="cover" />
           <div class="book-info">
-            <h2>The Ailouran from Earth</h2>
+            <h2>The Ailouran on Earth</h2>
             <p class="price">Ebook · PDF + EPUB · $9,99</p>
             <p class="meta">Full-length novel · ~87,000 words · ~9–10 hour read</p>
 
@@ -273,6 +300,30 @@
             </a>
 
             <p class="trust">Instant download · Secure checkout</p>
+
+            <section class="reviews">
+            
+              <button class="reviews-toggle" type="button">
+                Reader Reviews (<span class="review-count">0</span>)
+              </button>
+            
+              <div class="reviews-content" hidden>
+                <div
+                  id="cusdis_thread_ailouran"
+                  class="cusdis_thread"
+                  data-host="https://cusdis.com"
+                  data-app-id="da06c15f-9d32-43af-8365-c26c6d0b4ca3"
+                  data-page-id="ailouran-on-earth"
+                  data-page-url="https://kbsienna.com"
+                  data-page-title="The Ailouran on Earth">
+                </div>
+            
+                <p class="review-pending">
+                  Thank you for your review. It will appear shortly.
+                </p>
+              </div>
+            
+            </section>
       
             <section class="reviews">
               <h3>Reader Reviews</h3>
@@ -310,22 +361,43 @@
 
   <!-- GA4 Gumroad click tracking -->
   <script>
-document.addEventListener("click", function (event) {
-  const link = event.target.closest("a");
-  if (!link || !link.href) return;
-
-  if (link.href.includes("gumroad.com")) {
-    gtag("event", "gumroad_click", {
-      book: link.dataset.book || "unknown",
-      destination: link.href,
-      transport_type: "beacon"
-    });
-  }
-});
-</script>
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a");
+    if (!link || !link.href) return;
+  
+    if (link.href.includes("gumroad.com")) {
+      gtag("event", "gumroad_click", {
+        book: link.dataset.book || "unknown",
+        destination: link.href,
+        transport_type: "beacon"
+      });
+    }
+  });
+  </script>
 
   <!-- Cusdis comments (load once) -->
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+  <script>
+  document.querySelectorAll('.reviews').forEach(section => {
+    const toggle = section.querySelector('.reviews-toggle');
+    const content = section.querySelector('.reviews-content');
+    const countEl = section.querySelector('.review-count');
+  
+    toggle.addEventListener('click', () => {
+      content.hidden = !content.hidden;
+    });
+  
+    // Wait for Cusdis to load comments, then count them
+    const observer = new MutationObserver(() => {
+      const comments = section.querySelectorAll('.comment');
+      countEl.textContent = comments.length;
+    });
+  
+    observer.observe(section, { childList: true, subtree: true });
+  });
+  </script>
+
 
 </body>
 </html>
