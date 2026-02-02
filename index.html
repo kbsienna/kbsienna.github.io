@@ -184,6 +184,34 @@
 
       .cover { width: 180px; }
     }
+
+    /* Strip Payhip default button styling */
+    a.payhip-buy-button {
+      all: unset;
+      display: inline-block;
+    }
+    
+    /* Re-apply your original button style */
+    a.payhip-buy-button.buy-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--sienna), var(--pink));
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    a.payhip-buy-button.buy-button:hover {
+      background: var(--pink);
+      box-shadow: 0 0 0 6px rgba(201,138,162,0.15);
+    }
+
+    
   </style>
 </head>
 
