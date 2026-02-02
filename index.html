@@ -21,6 +21,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K. B. Sienna</title>
 
+  <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+
   <style>
 
     :root {
@@ -202,7 +204,7 @@
           <img src="the-ailouran-on-earth-cover-2.jpg" alt="The Ailouran from Earth book cover" class="cover" />
           <div class="book-info">
             <h2>The Ailouran on Earth (COMING SOON)</h2>
-            <p class="price">eBook · PDF + EPUB · $5,99</p>
+            <p class="price">eBook · PDF + EPUB · $5.99</p>
             <p class="meta">Full-length novel · ~86,000 words · ~ pages</p>
 
             <p><em>The Ailouran on Earth</em> is an erotic dark fantasy romance.</p>
@@ -213,7 +215,7 @@
 
             <p>What begins as revenge and a mission to make her suffer slowly turns into something far more volatile, as desire and resentment twist together in a place where vulnerability can be fatal.</p>
 
-            <p class="disclaimer"><strong>Disclaimer:</strong><br />Contains explicit non-consensual sexual content. 18+ only.</p>
+            <p class="disclaimer"><strong>Disclaimer:</strong><br />Contains explicit sexual content. 18+ only.</p>
            <!-- 
             <a href="#" class="buy-button">
               Get the Ebook
@@ -232,7 +234,7 @@
           <img src="hear-me-cover.jpg" alt="Hear Me book cover" class="cover" />
           <div class="book-info">
             <h2>Hear Me</h2>
-            <p class="price">eBook · PDF + EPUB · $2,99</p>
+            <p class="price">eBook · PDF + EPUB · $2.99</p>
             <p class="meta">Novella · ~21,500 words · ~70 pages</p>
 
             <p><em>Hear Me</em> is a psychologically dark erotic novel set in a post-apocalyptic world.</p> 
@@ -241,12 +243,12 @@
 <!--
             <p>She survives by staying unseen and unheard, scavenging the ruins of a broken Earth until she is taken. Stolen from what remains of her life, she is brought into a pristine, controlled reality where power is absolute and survival demands submission, adaptation, and restraint. Claimed by a man whose care is inseparable from cruelty, she is forced into an existence where her body tastes pleasure even as her mind resists, and obedience becomes the price of survival.</p>
 -->
-            <p class="disclaimer"><strong>Disclaimer:</strong><br />Contains explicit non-consensual sexual content. 18+ only.</p>
+            <p class="disclaimer"><strong>Disclaimer:</strong><br />Contains explicit sexual content. 18+ only.</p>
             
             <a
-              href="https://kbsienna.gumroad.com/l/cokqwu?wanted=true"
-              class="buy-button"
-              data-book="Hear Me">
+              href="https://payhip.com/b/CLsWd"
+              class="payhip-buy-button buy-button"
+              data-product="CLsWd">
               Get the Ebook
             </a>
 
@@ -261,27 +263,6 @@
     <footer>© K. B. Sienna</footer>
 
   </div>
-
-  <!-- Gumroad checkout -->
-  <script src="https://gumroad.com/js/gumroad.js"></script>
-
-  <!-- GA4 Gumroad click tracking -->
- <script>
-  document.addEventListener("click", function (event) {
-    const link = event.target.closest("a");
-    if (!link || !link.href) return;
-  
-    if (link.href.includes("gumroad.com")) {
-      if (typeof window.gtag === "function") {
-        window.gtag("event", "gumroad_click", {
-          book: link.dataset.book || "unknown",
-          destination: link.href,
-          transport_type: "beacon"
-        });
-      }
-    }
-  });
-  </script>
 
 
 </body>
