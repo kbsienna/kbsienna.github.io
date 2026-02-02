@@ -296,6 +296,21 @@
 
   </div>
 
+  <!-- GA4 Payhip click tracking -->
+  <script>
+    document.addEventListener("click", function (event) {
+      const button = event.target.closest(".payhip-buy-button");
+      if (!button) return;
+  
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "payhip_click", {
+          event_category: "ecommerce",
+          event_label: button.dataset.product || "unknown",
+          value: 1
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
