@@ -189,7 +189,9 @@
     a.payhip-buy-button {
       all: unset;
       display: inline-block;
+      background: none !important;
     }
+
     
     /* Re-apply your original button style */
     a.payhip-buy-button.buy-button {
@@ -197,8 +199,8 @@
       margin-top: 1rem;
       padding: 0.65rem 1.4rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--sienna), var(--pink));
-      color: #fff;
+      background: linear-gradient(135deg, var(--sienna), var(--pink)) !important;
+      color: #fff !important;
       text-decoration: none;
       font-size: 0.95rem;
       letter-spacing: 0.05em;
@@ -276,9 +278,11 @@
             <a
               href="https://payhip.com/b/CLsWd"
               class="payhip-buy-button buy-button"
-              data-product="CLsWd">
+              data-product="CLsWd"
+              data-theme="none">
               Get the Ebook
             </a>
+
 
 
             <p class="trust">Instant download · Secure checkout</p>
